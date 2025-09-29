@@ -195,10 +195,16 @@
   
   <script>
     function sendMail() {
-      const message = document.getElementById('user-message').value;
-      const subject = "Message from Portfolio";
-      const mailtoLink = `mailto:dharmeshkumarlkhairnar05@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-      window.location.href = mailtoLink;
+      const input=document.getElementById('user-message');
+      const message = input.value;
+    const subject = "Message from Portfolio";
+
+    // Gmail compose URL
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=dharmeshkumarlkhairnar05@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+
+    // Open Gmail in a new tab
+    window.open(gmailUrl, '_blank');
+      input.value='';
     }
   </script>
 
